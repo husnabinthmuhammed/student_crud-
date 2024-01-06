@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student_edit</title>
+</head>
+<body>
+<h1>{% if student %}Edit Student{% else %}Add New Student{% endif %}</h1>
+<form method="post" class="student-form">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% if student %}{% url 'student_detail' pk=student.pk %}{% else %}{% url 'student_list' %}{% endif %}">Cancel</a>
+
+</body>
+</html>

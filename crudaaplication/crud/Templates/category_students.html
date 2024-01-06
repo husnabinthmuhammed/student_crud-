@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>category_list</title>
+</head>
+<body>
+<h1>Students in Category: {{ category_name }}</h1>
+<ul>
+  {% for student in students %}
+    <li><a href="{% url 'student_detail' pk=student.pk %}">{{ student.student_name }}</a></li>
+  {% endfor %}
+</ul>
+<a href="{% url 'student_list' %}">Back to student list</a>
+
+</body>
+</html>
